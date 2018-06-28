@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kibana Context Search</title>
+    <form id = "form">
+
+    <div id="times">
+    <h3>Time</h3>
+        <input type="checkbox" class="timeOption" name="Last 15 minutes" id="fifteenMins" value="Last 15 minutes"> Last 15 minutes <br>
+        <input type="checkbox" class="timeOption" name="Last 30 minutes" id="thirtyMins" value="Last 30 minutes"> Last 30 minutes <br>
+        <input type="checkbox" class="timeOption" name="Last 1 hour" id="oneHours" value="Last 1 hour"> Last 1 hour <br>
+        <input type="checkbox" class="timeOption" name="Last 4 hours" id="fourHours" value="Last 4 hours"> Last 4 hours <br>
+        <input type="checkbox" class="timeOption" name="Last 12 hours" id="twelveHours" value="Last 12 hours"> Last 12 hours <br>
+        <input type="checkbox" class="timeOption" name="Last 24 hours" id="twentyFourHours" value="Last 24 hour"> Last 24 hours <br>
+        <input type="checkbox" class="timeOption" name="Last 7 days" id="sevenDays" value="Last 7 days"> Last 7 days <br>
+        <input type="checkbox" class="timeOption" name="Last 30 days" id="thirtyDays" value="Last 30 days"> Last 30 days <br>
+    </div>
+    <body>
+    <h3>Environment</h3>
+    <select id="env">
+        <option id="5000" value="5000" selected>Prod NA - Node A</option>
+        <option id="5001" value="5001">Prod NA - Node C</option>
+        <option id="5110"value="5110">QAS1 - Node A</option>
+        <option id="5120"value="5120">QAS2 - Node A</option>
+        <option id="5130"value="5130">QAS3 - Node A</option>
+    </select>
+</body>    
+</form>
+    <script src="options_new.js"></script>
+    </head>
+
+    </html>

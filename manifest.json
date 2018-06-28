@@ -1,0 +1,19 @@
+{
+  "name": "Kibana Context Search",
+  "description": "Use the context menu to search for a string in Kibana",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": ["contextMenus", "storage", "activeTab", "declarativeContent","tabs", "http://*/", "https://*/" ,"*://*/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "options_new.html"
+  },
+  "icons": {
+   "16": "kibana16.png",
+   "48": "kibana48.png",
+  "128": "kibana128.png"
+ }
+}
