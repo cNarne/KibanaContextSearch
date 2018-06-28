@@ -1,3 +1,4 @@
+//TODO Cleanup code to remove hard button id context and add listeners in a for loop
 debugger;
 function initialize() {
     chrome.storage.sync.get(null, function (formValues) {
@@ -65,7 +66,7 @@ function initialize() {
             }
             else
                 removeContext(document.getElementById('thirtyDays').name)
-
+         //Every change sends message to background page   
          chrome.runtime.sendMessage({type:"data", items: formValues}, function (response) {
         });
     });
@@ -75,7 +76,7 @@ function initialize() {
 
 
 
-
+//Creates context
 function createContext(id, title) {
 
     chrome.contextMenus.remove(id);
@@ -87,11 +88,16 @@ function createContext(id, title) {
     });
 }
 
+//Removes old context
 function removeContext(id) {
     chrome.contextMenus.remove(id);
 }
 
+// Initialize the form.
 initialize();
+
+//Every change should trigger storage change
+//Every change should update context
 
 document.getElementById('env').onchange = function () {
     this.disabled = true;

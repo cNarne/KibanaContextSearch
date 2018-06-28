@@ -1,12 +1,8 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-
-
 function init() {
   var d = document;
   const styles = d.createElement('style');
+  // Button position is set by pixels
+  //TODO figure out a better place for the button referenced by element.
   styles.innerHTML = '#newRelicDuhh{display:flex;flex-direction:column;left:5px;font-size:10px;box-shadow:0 2px 1px rgba(0,0,0,0.2);z-index:1;position:fixed;top:100px;left:300px;right:400px}#newRelicDuhh div{margin:0 auto}#newRelicDuhh p{margin:0;font-size:14px}#newRelicDuhh.hidden,#newRe.lockout p{display:none !important;visibility:hidden !important}';
   d.head.prepend(styles);
   //let elements2 = Array.from(document.querySelectorAll("code.value.ng-binding"));
@@ -16,8 +12,10 @@ function init() {
   console.log("Button New Relic");
   btn.id = 'newRelicDuhh';
   btn.innerHTML = '<div>Insights</div>';
+  // Don't process dom and generate url until user clicks.
   btn.addEventListener('click', getInsight);
   var element =  d.getElementById('newRelicDuhh');
+  //Not sure if below works
   if (typeof(element) == 'undefined' || element == null)
     elements2[0].parentNode.insertBefore(btn, elements2[0].nextSibling);
   console.log(btn);
@@ -25,7 +23,7 @@ function init() {
     
 }
 
-    init();
+init();
     
 
 function getInsight() {
@@ -33,6 +31,7 @@ var queryInitial = grabNrql();
 var toFromDates = grabDates();
 var queryFinalWithDates = generateQuery(queryInitial, toFromDates);
 var url = extractInitialUrl() + encodeURI(queryFinalWithDates);
+//Send message to background with the new url.
 chrome.runtime.sendMessage({ type:"url", url: url}, function (response) {
 });
 }
