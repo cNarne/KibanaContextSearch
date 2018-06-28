@@ -13,7 +13,7 @@ function createForm() {
     if(list.removedContextMenu){
       if(list.removedContextMenu.port)
         port = list.removedContextMenu.port;
-
+// Not sure
       if (list.removedContextMenu.interval)
         added = list.removedContextMenu.interval || [];
     }
