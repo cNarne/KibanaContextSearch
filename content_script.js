@@ -20,7 +20,7 @@ function init() {
   console.log(elements2[0]);
     }
 }
-
+// Init on page load
 window.onload = function () {
 init();
 }
