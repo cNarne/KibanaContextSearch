@@ -1,4 +1,4 @@
-//Executes content script
+//Executes content script (6-30)
 debugger;
 window.onload = function () {
   chrome.tabs.executeScript(null, {
