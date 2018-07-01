@@ -1,4 +1,4 @@
-//TODO Cleanup code to remove hard coded id context and add listeners in a for loop
+//TODO Cleanup code to remove hard button id context and add listeners in a for loop
 debugger;
 function initialize() {
     chrome.storage.sync.get(null, function (formValues) {
